@@ -1,10 +1,92 @@
-<html>
-  <head>
-    <title>good site</title>
-  </head>
-  <body>
-    <p>
-      🫥
-    </p>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <title>Futures</title>
+  <style>
+    @media (prefers-color-scheme: dark) {
+      p {
+        color: white;
+      }
+
+      body {
+        background-color: #141414;
+      }
+    }
+
+    @media (prefers-color-scheme: light) {
+      p {
+        color: black;
+      }
+
+      body {
+        background-color: #ffffff;
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0px;
+    }
+
+    .fade-in {
+      animation: fadein ease-in 3s;
+    }
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    p {
+      font-family: -apple-system, "SF Pro", 'Roboto', sans-serif;
+      font-size: 3vmin;
+      margin: 0px;
+      text-align: center;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    #container {
+      width: 100%;
+      height: 100%; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .content {
+      max-width: calc(100vmin / 1.5);
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="https://github.com/Logicer16">
+    <div id="container">
+      <img src="/img/icon.png" alt="Logicer's Icon">
+      <p class="fade-in content">
+        Something for the future...
+      </p>
+    </div>
+  </a>
+</body>
+
 </html>
