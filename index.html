@@ -1,95 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" sizes="64x64" href="/img/icon 64x64.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/icon 32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/img/icon 16x16.png">
-  <title>Futures</title>
-  <style>
-    @media (prefers-color-scheme: dark) {
-      p {
-        color: white;
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" sizes="64x64" href="/img/icon 64x64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icon 32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icon 16x16.png">
+    <title>Futures</title>
+    <style>
+      :root {
+        --font: 5vmin;
+        --gap: calc(5vmin - var(--font));
+        --y-pad: 10vmin;
+        --x-pad: 5vmin;
+        --container-height: calc(100vh - (var(--y-pad) * 2));
+        --container-width: calc(100vw - (var(--x-pad) * 2));
+        --image-size: calc(100vmin - (var(--font) + var(--gap) + (var(--y-pad) * 2)));
       }
 
+      @media (prefers-color-scheme: dark) {
+        p {
+          color: white;
+        }
+
+        body {
+          background-color: #141414;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        p {
+          color: black;
+        }
+
+        body {
+          background-color: #ffffff;
+        }
+      }
+
+      html,
       body {
-        background-color: #141414;
+        margin: 0px;
       }
-    }
 
-    @media (prefers-color-scheme: light) {
+      .fade-in {
+        animation: fadein ease-in 3s;
+      }
+
+      @keyframes fadein {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+
       p {
-        color: black;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: var(--font);
+        margin: 0px;
+        text-align: center;
+        white-space: nowrap;
       }
 
-      body {
-        background-color: #ffffff;
+      a {
+        color: inherit;
+        text-decoration: none;
+        cursor: default;
+        display: block;
       }
-    }
 
-    html,
-    body {
-      height: 100%;
-      margin: 0px;
-    }
+      #container {
+        margin-top: var(--y-pad);
+        margin-bottom: var(--y-pad);
+        margin-left: var(--x-pad);
+        margin-right: var(--x-pad);
+        width: var(--container-width) !important;
+        height: var(--container-height) !important;
+      }
 
-    .fade-in {
-      animation: fadein ease-in 3s;
-    }
+      .y {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        gap: var(--gap);
+      }
 
-    @keyframes fadein {
-      from {
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+      }
+
+      iframe {
+        border-style: none;
+        aspect-ratio: 1;
+        max-width: 100%;
+        max-height: 100%;
+        image-rendering: pixelated;
+        height: var(--image-size);
+      }
+
+      .hidden {
         opacity: 0;
       }
-
-      to {
-        opacity: 1;
+    </style>
+    <script>
+      /**
+       * @param length {number}
+       */
+      function getRandomHex(length) {
+        return [...Array(length)].map(() => {
+          return Math.floor(Math.random() * 16).toString(16);
+        }).join("");
       }
-    }
 
-    p {
-      font-family: -apple-system, "SF Pro", 'Roboto', sans-serif;
-      font-size: 3vmin;
-      margin: 0px;
-      text-align: center;
-    }
+      addEventListener("DOMContentLoaded", () => {
+          const container = document.getElementById("container");
 
-    a {
-      color: inherit;
-      text-decoration: none;
-      cursor: default;
-    }
+        if (container === null) return;
 
-    #container {
-      width: 100%;
-      height: 100%; 
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://icon.logicer.cc/preview#{%22fillColour%22:%22#${getRandomHex(6)}%22}`;
+        iframe.scrolling = "no";
+        iframe.addEventListener("load", () => {
+          container.classList.add("fade-in");
+          container.classList.remove("hidden");
+        })
+        container.prepend(iframe);
+      });
+    </script>
+  </head>
 
-    .content {
-      max-width: calc(100vmin / 1.5);
-      vertical-align: middle;
-    }
-  </style>
-</head>
-
-<body>
-  <a href="https://github.com/Logicer16">
-    <div id="container">
-      <img class="fade-in content" src="/img/icon.png" alt="Logicer's Icon">
-      <p class="fade-in content">
+  <body>
+    <div id="container" class="y hidden">
+      <p>
         Something for the future...
       </p>
     </div>
-  </a>
-</body>
+    </div>
+  </body>
 
 </html>
