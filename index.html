@@ -73,7 +73,7 @@
         text-decoration: none;
         cursor: default;
         display: block;
-      }
+              }
 
       #container {
         margin-top: var(--y-pad);
@@ -127,7 +127,7 @@
       }
 
       addEventListener("DOMContentLoaded", () => {
-          const container = document.getElementById("container");
+        const container = document.getElementById("container");
 
         if (container === null) return;
 
@@ -137,19 +137,19 @@
         iframe.addEventListener("load", () => {
           container.classList.add("fade-in");
           container.classList.remove("hidden");
-        })
+        });
+
         container.prepend(iframe);
       });
     </script>
   </head>
 
   <body>
-    <div id="container" class="y hidden">
-      <p>
-        Something for the future...
-      </p>
-    </div>
-    </div>
+      <div id="container" class="y hidden">
+        <p>
+          Something for the future...
+        </p>
+      </div>
   </body>
 
 </html>
