@@ -1,0 +1,1685 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta content="width=360, initial-scale=1.0" name="viewport">
+
+    <!-- Metadata -->
+    <title>Logicer's PP</title>
+    <meta name="description" content="Choose the nicest shade of pink for the new icon design">
+    <meta name="googlebot" content="notranslate">
+    <meta property="og:title" content="Logicer's PP">
+    <meta property="og:site_name" content="Logicer's Pink Picker">
+    <meta property="og:url" content="https://logicer.cc/pp/">
+    <meta property="og:description" content="Choose the nicest shade of pink for the new icon design">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_AU">
+    <meta property="og:site_name" content="Logicer">
+
+    <meta property="og:image" content="https://logicer.cc/pp/img/pp icon masked - 1024x1024.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:alt"
+      content="Logicer's icon with a transparent fill atop a subtle, diagonal gradient of different shades of pink" />
+
+    <!-- Icon -->
+    <link href="./img/pp icon - 16x16.png" rel="icon" type="image/png" sizes="16x16">
+    <link href="./img/pp icon - 32x32.png" rel="icon" type="image/png" sizes="32x32">
+    <link href="./img/pp icon - 48x48.png" rel="icon" type="image/png" sizes="48x48">
+    <link href="./img/pp icon - 64x64.png" rel="icon" type="image/png" sizes="64x64">
+    <link href="./img/pp icon - 96x96.png" rel="icon" type="image/png" sizes="96x96">
+    <link href="./img/pp icon - 112x112.png" rel="icon" type="image/png" sizes="112x112">
+    <link href="./img/pp icon - 128x128.png" rel="icon" type="image/png" sizes="128x128">
+    <link href="./img/pp icon - 144x144.png" rel="icon" type="image/png" sizes="144x144">
+    <link href="./img/pp icon - 160x160.png" rel="icon" type="image/png" sizes="160x160">
+    <link href="./img/pp icon - 176x176.png" rel="icon" type="image/png" sizes="176x176">
+    <link href="./img/pp icon - 192x192.png" rel="icon" type="image/png" sizes="192x192">
+    <link href="./img/pp icon - 256x256.png" rel="icon" type="image/png" sizes="256x256">
+    <link href="./img/pp icon - 512x512.png" rel="icon" type="image/png" sizes="512x512">
+    <link href="./img/pp icon - 1024x1024.png" rel="icon" type="image/png" sizes="1024x1024">
+    <link href="./img/pp icon - 1024x1024.png" rel="apple-touch-icon">
+
+    <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="canvas" media="(prefers-color-scheme: dark)">
+
+    <script src="./service-worker.js" defer fetchpriority="low"></script>
+
+    <!-- Fonts -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link as="font" crossorigin="anonymous"
+      href="https://fonts.gstatic.com/l/font?kit=aFTb7PNiY3U2EKnF-D2RI6epTYvbdnFlkoZTSonUHf9hSzCKKmdGmrqk3r8Y8BKOP0W056BQkIsXGSm7NpxxyMo7anYH8opYXth7xV9nM7ka1Q0H5K1CLprVvG3XnGtaxIdoeQMG4LFKmxY&skey=2b68a807737779ac&v=v6"
+      rel="preload">
+    <!-- Inlined in this document -->
+    <!-- <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Sono:wght,MONO@200,1;400,0&display=block&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%60%7A%7B%7C%7D"
+      blocking="render"> -->
+
+    <!-- eslint-disable @html-eslint/use-baseline -->
+    <link href="https://cdnjs.cloudflare.com" rel="preconnect">
+    <link as="style" blocking="render"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css" rel="preload">
+    <link as="font" crossorigin="anonymous"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2" rel="preload">
+    <link blocking="render" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
+      rel="stylesheet">
+    <!-- eslint-enable @html-eslint/use-baseline -->
+
+    <!-- MARK: Main Styles
+    -->
+    <style>
+      :root {
+        color-scheme: dark light;
+
+        --background-color: canvas;
+
+        @media (prefers-color-scheme: light) {
+          --background-color: #f0f0f0;
+        }
+
+        scrollbar-gutter: stable both-edges;
+      }
+
+      body {
+        width: auto;
+        background-color: var(--background-color);
+      }
+
+      * {
+        /* Safari */
+        outline-width: 5px;
+        outline-offset: 0;
+      }
+
+      /* From Google Fonts API */
+      @font-face {
+        font-family: "Sono";
+        font-style: normal;
+        font-weight: 400;
+        font-display: block;
+        src:
+          local("Sono"),
+          url(https://fonts.gstatic.com/l/font?kit=aFTb7PNiY3U2EKnF-D2RI6epTYvbdnFlkoZTSonUHf9hSzCKKmdGmrqk3r8Y8BKOP0W056BQkIsXGSm7NpxxyMo7anYH8opYXth7xV9nM7ka1Q0H5K1CLprVvG3XnGtaxIdoeQMG4LFKmxY&skey=2b68a807737779ac&v=v6) format("woff2");
+      }
+
+      @font-face {
+        font-family: "Sono";
+        font-style: normal;
+        font-weight: 200;
+        font-display: block;
+        src:
+          local("Sono"),
+          url(https://fonts.gstatic.com/l/font?kit=aFTb7PNiY3U2EKnF-D2RI6epTYvbdnFlkoZTSonUHf9hSzCKKmdGmrqk3r8Y8BKOP0W056BQkIsXGSm7NpxxyMo7anYH8opYXth7xV9nM7ka1Q0H5K1CLprVvG3XnGtaxIdoeQMG4LFKmxY&skey=2b68a807737779ac&v=v6) format("woff2");
+      }
+
+      .fontSono {
+        font-family:
+          "Sono",
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "MONO" 0;
+      }
+
+      .fontSonoMono {
+        font-family: "Sono", monospace;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-variation-settings: "MONO" 1;
+      }
+
+      .fontExtraLight {
+        font-weight: 200;
+      }
+
+      .fontAwesome {
+        font: var(--fa-font-solid);
+        -webkit-font-smoothing: antialiased;
+
+        -webkit-user-select: none;
+        user-select: none;
+      }
+
+      h1,
+      h2,
+      p,
+      .fa-solid {
+        opacity: 0;
+        transition: opacity 0.1s linear;
+
+        &.loaded {
+          opacity: 1;
+
+          .revealer:not(.resizing)>.revealing {
+            transition: width 0.5s ease;
+          }
+        }
+      }
+
+      .hideFontInChildren {
+        color: transparent;
+        transition: color 0.1s linear;
+
+        &:before,
+        * {
+          opacity: 0;
+          transition: opacity 0.1s linear;
+        }
+
+        &.loaded {
+          color: revert;
+
+          *,
+          &:before {
+            opacity: 1;
+          }
+        }
+      }
+
+      #superSecretUndoRedoStateBoxBecauseBrowsersDontMakeMyJobEasy {
+        opacity: 0;
+        position: fixed;
+        top: -1000px;
+        pointer-events: none;
+        visibility: hidden;
+
+        &.unhide {
+          visibility: initial;
+        }
+      }
+
+      svg.definition {
+        display: none;
+      }
+    </style>
+
+    <!-- MARK: Title Styles
+    -->
+    <style>
+      h1 {
+        text-align: center;
+        font-size: min(6vw, 4rem);
+        min-height: 1.35em;
+        margin-bottom: 0;
+      }
+
+      .revealer {
+        cursor: help;
+
+        &>.revealing {
+          display: inline-block;
+          vertical-align: top;
+          width: 1ch;
+          overflow: hidden;
+          white-space: pre;
+        }
+
+        &:hover>.revealing {
+          &#revealingPink {
+            width: 5ch;
+          }
+
+          &#revealingPicker {
+            width: 6ch;
+          }
+        }
+      }
+    </style>
+
+    <!-- MARK: Control Styles
+     -->
+    <style>
+      :root {
+        --buttonBorderRadiusFraction: 0.3;
+        --buttonBorderRadius: calc(var(--buttonBorderRadiusFraction) * 1em);
+      }
+
+      #controls {
+        --gap: 1rem;
+        --height: min(2rem, 8vw);
+        --buttonCount: 5;
+
+        display: flex;
+        justify-content: center;
+        gap: var(--gap);
+        flex-wrap: wrap;
+
+        padding-top: 2rem;
+        padding-bottom: 0.75rem;
+        position: sticky;
+        top: -0.5rem;
+        background-color: var(--background-color);
+
+        &:after {
+          content: "";
+          position: absolute;
+          z-index: 1;
+          bottom: -1.25rem;
+          left: 0;
+          pointer-events: none;
+          background-image: linear-gradient(to bottom,
+              var(--background-color) 20%,
+              transparent);
+          width: 100%;
+          height: 1.25rem;
+        }
+
+        #controlButtons {
+          display: flex;
+          justify-content: center;
+          gap: var(--gap);
+
+          #showHide {
+            &+label:before {
+              /* Set the font and weight for this icon style */
+              font: var(--fa-font-solid);
+              /* Make sure icons render pixel-perfect */
+              -webkit-font-smoothing: antialiased;
+              /* eye-slash */
+              content: "\f070";
+            }
+
+            &:checked+label:before {
+              /* eye */
+              content: "\f06e";
+            }
+          }
+
+          .button,
+          button {
+            height: var(--height);
+            width: var(--height);
+            font-size: 1rem;
+            border-radius: calc(var(--buttonBorderRadius) * 1.5);
+
+            &>*,
+            &:before {
+              line-height: var(--height) !important;
+            }
+          }
+        }
+
+        input[type="text"] {
+          --padding: calc((var(--height) - (2 * var(--border)) - 1em) / 2);
+          --border: 2px;
+          --nonWidthWidth: calc((2 * var(--border)) + (2 * var(--padding)));
+          --buttonControlsWidth: calc((var(--height) * var(--buttonCount)) + (var(--gap) * (var(--buttonCount) - 1)));
+
+          min-width: calc(var(--buttonControlsWidth) - var(--nonWidthWidth));
+          height: calc(var(--height) - var(--nonWidthWidth));
+          padding: var(--padding);
+          border-width: var(--border);
+
+          border-radius: calc(var(--height) * var(--buttonBorderRadiusFraction));
+          border-style: solid;
+
+          font-size: 100%;
+
+          background-color: light-dark(#eeeeee, #202020);
+        }
+      }
+
+      .button,
+      button {
+        border-radius: var(--buttonBorderRadius);
+        border-width: 0;
+        text-align: center;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        color: canvastext;
+
+        &:disabled {
+          color: graytext;
+        }
+
+        -webkit-user-select: none;
+        user-select: none;
+
+        &:not(:disabled) {
+          cursor: pointer;
+
+          &:active {
+            background-color: light-dark(#888888, #606060);
+          }
+
+          &:hover:not(:active) {
+            background-color: light-dark(#c0c0c0, #404040);
+          }
+        }
+
+        &>*,
+        &:before {
+          vertical-align: bottom;
+        }
+
+        background-color: light-dark(#b0b0b0, #505050);
+
+        @media (prefers-color-scheme: light) {
+          &:disabled {
+            background-color: #e8e8e8;
+          }
+        }
+
+        :has(input[type="checkbox"]#showHide:focus-visible) &:is(label[for="showHide"]) {
+          outline: -webkit-focus-ring-color auto 5px;
+        }
+      }
+
+      input[type="checkbox"].hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: 0;
+        outline: none;
+        opacity: 0;
+      }
+
+      #emptyInfo {
+        display: flex;
+        flex-direction: column;
+        margin-top: 12vh;
+        align-items: center;
+
+        :has(#showHide:checked, #iconGrid input[type="checkbox"]:checked) & {
+          display: none;
+        }
+
+        >* {
+          width: fit-content;
+        }
+
+        h2 {
+          font-size: 2rem;
+        }
+
+        i {
+          font-size: 8rem;
+        }
+
+        label {
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+
+          width: 12rem;
+
+          border-radius: 0.5rem;
+        }
+      }
+    </style>
+
+    <!-- MARK: Grid Styles
+    -->
+    <style>
+      #iconGrid {
+        --itemWidth: min(256px, 90vw);
+        --borderWidth: 1px;
+        --fullItemWidth: calc(var(--itemWidth) + 2 * var(--borderWidth));
+        --gap: calc(var(--itemWidth) / 16);
+        --columnsMax: 5;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        :has(#showHide:checked, & input[type="checkbox"]:checked) & {
+          margin-top: 3rem;
+        }
+
+        max-width: calc(var(--fullItemWidth) * var(--columnsMax) + var(--gap) * (var(--columnsMax) - 1));
+
+        display: grid;
+        justify-content: center;
+        justify-items: center;
+        gap: var(--gap);
+
+        --repeat: auto-fit;
+        grid-template-columns: repeat(var(--repeat), var(--itemWidth));
+
+        &>* {
+          background-color: white;
+          aspect-ratio: 1;
+          width: var(--itemWidth);
+
+          border-radius: calc(var(--itemWidth) / 16);
+          border-width: var(--borderWidth);
+          border-style: solid;
+
+          input[type="checkbox"] {
+            &+label:before {
+              /* Set the font and weight for this icon style */
+              font: var(--fa-font-solid);
+              /* Make sure icons render pixel-perfect */
+              -webkit-font-smoothing: antialiased;
+              content: "+";
+              color: lime;
+            }
+
+            &:checked+label:before {
+              /* cross */
+              content: "\f00d";
+              color: red;
+            }
+          }
+
+          &:has(input[type="checkbox"]:not(:checked)) {
+            background-color: #c0c0c0c0;
+
+            body:not(:has(#showHide:checked)) & {
+              display: none;
+            }
+
+            @media (prefers-color-scheme: light) {
+
+              button,
+              .button {
+                background-color: #888888;
+
+                &:active {
+                  background-color: #aaaaaa;
+                }
+
+                &:hover {
+                  background-color: #a0a0a0;
+                }
+              }
+            }
+
+            @media (prefers-color-scheme: dark) {
+              background-color: #202020;
+            }
+          }
+
+          .itemControls {
+            --height: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            margin: 1rem;
+            font-size: 1.2em;
+            height: var(--height);
+
+            &>* {
+              margin: 0;
+            }
+
+            p {
+              cursor: help;
+
+              &:before {
+                content: "#";
+              }
+            }
+
+            button,
+            .button {
+              height: var(--height);
+              width: var(--height);
+
+              &>*,
+              &:before {
+                line-height: var(--height);
+              }
+            }
+          }
+
+          @media (prefers-color-scheme: dark) {
+            background-color: #333333;
+          }
+        }
+      }
+    </style>
+
+    <script>
+      // Feature Flags
+      /** @type {boolean} */
+      const undoRedoListenerDisabled = false;
+      /** @type {boolean} */
+      const colourNamesDisabled = false;
+
+      /** @type {Promise<unknown>[]} */
+      const promises = [];
+
+      /** @type {({colour: string, index: number, name?: string} | undefined)[]} */
+      const icons = [
+        { colour: "#ffc0cb", index: 1 },
+        { colour: "#f5a9b8", index: 2, name: "Trans" },
+        { colour: "magenta", index: 3 },
+        { colour: "deeppink", index: 4 },
+        { colour: "hotpink", index: 5 },
+        { colour: "lightpink", index: 6 },
+        { colour: "pink", index: 7 },
+        { colour: "orchid", index: 8 },
+        { colour: "palevioletred", index: 9 },
+        { colour: "plum", index: 10 },
+        { colour: "violet", index: 11 },
+        { colour: "#f5b6cd", index: 12, name: "Pantone 1895 C" },
+        { colour: "#f5b1cc", index: 13, name: "Pantone 203 U" },
+        { colour: "#f4b4c4", index: 14, name: "Pantone 14-1911 TPX Candy Pink" },
+        { colour: "#f5bdc8", index: 15, name: "Pantone 13-2006 TPG Almond Blossom" },
+        { colour: "#f5bec7", index: 16, name: "Pantone 13-2006 TCX Almond Blossom" },
+        { colour: "#f8aadd", index: 17, name: "Pantone Magenta 0521 U" },
+        { colour: "#ffa9d6", index: 18, name: "Pantone 13-2120 TN Cotton Candy" },
+        { colour: "#f1b2dc", index: 19, name: "Pantone Magenta 0521 C" },
+        { colour: "#ffc0c8", index: 20, name: "Pantone 919 C" },
+        { colour: "#ffbac9", index: 21, name: "Pantone 1767 U" },
+        { colour: "#ffc7ce", index: 22, name: "Pantone 919 U" },
+        { colour: "#ffb1bb", index: 23, name: "Pantone 176 C" },
+        // Pantone 12-1708 TCX
+        // Pantone 13-1906 TCX
+        // Pantone 13-1513 TCX
+        // Pantone 12-1808 TCX
+        // Pantone 13-1520 TCX
+        // Pantone 13-2010 TCX
+        // Pantone 13-2005 TCX
+        // Pantone 13-2016 TCX
+        // Pantone 13-2705 TCX
+        // Pantone 13-2009 TCX
+        // Pantone 16-2125 TN
+        // Pantone 16-2130 TN
+        // Pantone 12-1708 TPG
+        // Pantone 13-1906 TPG
+        // Pantone 14-1910 TPG
+        // Pantone 13-1513 TPG
+        // Pantone 13-2005 TPG
+        // Pantone 13-2003 TPG
+        // Pantone 13-1409 TPG
+        // Pantone 13-2016 TPG
+        // Pantone 13-2009 TPG
+        // Pantone 13-2705 TPG
+        // Pantone 13-2820 TSX
+        // Pantone 14-2116 TSX
+
+        // Pantone P 71-2 C
+        // Pantone P 65-2 C
+        // Pantone P 73-2 C
+        // Pantone P 62-1 C
+        // Pantone P 68-1 C
+        // Pantone P 75-4 C
+        // Pantone P 73-9 C
+        // Pantone P 71-2 U
+        // Pantone P 73-2 U
+        // Pantone P 65-2 U
+        // Pantone P 75-3 U
+        // Pantone P 73-1 U
+        // Pantone P 73-9 U
+        // Pantone 496 CP
+        // Pantone 217 CP
+        // Pantone 495 CP
+        // Pantone 2043 CP
+        // Pantone 510 CP
+        // Pantone 196 CP
+        // Pantone 2043 UP
+        // Pantone 3568 UP
+        // Pantone 517 UP
+        // Pantone 7429 UP
+        // Pantone 671 UP
+        // Pantone 4078 UP
+        // Pantone 2365 UP
+        // Pantone 182 C
+        // Pantone 699 C
+        // Pantone 2036 C
+        // Pantone 1895 C
+        // Pantone 495 C
+        // Pantone 707 C
+        // Pantone 496 C
+        // Pantone 3595 C
+        // Pantone 699 U
+        // Pantone 1767 U
+        // Pantone 496 U
+        // Pantone 182 U
+        // Pantone 196 U
+        // Pantone 1895 U
+        // Pantone 706 U
+        // Pantone 919 C
+        // Pantone 9284 C
+        // Pantone 940 C
+        // Pantone Red 0331 C
+        // Pantone 9282 U
+        // Pantone 9302 U
+        // Pantone 182 C
+        // Pantone 699 C
+        // Pantone 2036 C
+        // Pantone 1895 C
+        // Pantone 495 C
+        // Pantone 707 C
+        // Pantone 496 C
+        // Pantone 3595 C
+        // Pantone 699 U
+        // Pantone 1767 U
+        // Pantone 496 U
+        // Pantone 182 U
+        // Pantone 196 U
+        // Pantone 510 U
+        // Pantone 706 U
+
+        { colour: "#ffafaf", name: "ANSI 217, melon, pale_red_pink_tone, sundown" },
+        {
+          colour: "#ff00ff",
+          name: "ANSI 13, light_magenta, ANSI 201, fuchsia, magenta"
+        },
+        { colour: "#d70087", name: "ANSI 162, mexican_pink, strong_pink" },
+        { colour: "#d700af", name: "ANSI 163, hollywood_cerise" },
+        { colour: "#d75faf", name: "ANSI 169, hopbush, moderate_pink, super_pink" },
+        { colour: "#d75fff", name: "ANSI 171, heliotrope, light_magenta" },
+        {
+          colour: "#d787af",
+          name: "ANSI 175, can_can, middle_purple, slightly_desaturated_pink"
+        },
+        {
+          colour: "#d787d7",
+          name: "ANSI 176, deep_mauve, light_orchid, slightly_desaturated_magenta"
+        },
+        { colour: "#d787ff", name: "ANSI 177, bright_lilac, very_light_violet" },
+        {
+          colour: "#d7afd7",
+          name: "ANSI 182, grayish_magenta, pink_lavender, thistle"
+        },
+        { colour: "#ff0087", name: "ANSI 198, bright_pink, rose" },
+        {
+          colour: "#ff00af",
+          name: "ANSI 199, fashion_fuchsia, hollywood_cerise, pure_pink"
+        },
+        { colour: "#ff00d7", name: "ANSI 200, pure_magenta" },
+        { colour: "#ff5faf", name: "ANSI 205, hot_pink, light_pink" },
+        { colour: "#ff5fd7", name: "ANSI 206, light_deep_pink, purple_pizzazz" },
+        { colour: "#ff5fff", name: "ANSI 207, pink_flamingo, shocking_pink" },
+        { colour: "#ff87af", name: "ANSI 211, pink_salmon, tickle_me_pink" },
+        {
+          colour: "#ff87d7",
+          name: "ANSI 212, lavender_rose, princess_perfume, very_light_pink"
+        },
+        {
+          colour: "#ff87ff",
+          name: "ANSI 213, blush_pink, fuchsia_pink, very_light_magenta"
+        },
+        { colour: "#ffafd7", name: "ANSI 218, cotton_candy, lavender_pink, pale_pink" },
+        {
+          colour: "#ffafff",
+          name: "ANSI 219, pale_magenta, rich_brilliant_lavender, shampoo"
+        },
+        {
+          colour: "#ffd7d7",
+          name: "ANSI 224, cosmos, misty_rose, very_pale_red_pink_tone"
+        },
+        {
+          colour: "#ffd7ff",
+          name: "ANSI 225, bubble_gum, pink_lace, very_pale_magenta"
+        },
+
+        // "f2d4e0 Post-it Pink Salt"
+        // "ffbbd4 Post-it Positively Pink"
+        // faa6eb Post-it Tropical Pink
+
+        // ff99cd OneNote Pen
+        // ffadd5 OneNote Highlighter
+
+        // Jelly Belly
+        // iPhone 15 pink
+        // Apple Watch Band / iPhone Silicone Case Pink
+      ];
+    </script>
+  </head>
+
+  <body>
+    <svg class="definition">
+      <defs>
+        <g id="icon">
+          <g id="outline">
+            <rect height="16" width="96" x="80" y="16" />
+            <rect height="16" width="32" x="48" y="32" />
+            <rect height="32" width="16" x="32" y="48" />
+            <rect height="96" width="16" x="16" y="80" />
+            <rect height="64" width="32" x="64" y="96" />
+            <rect height="48" width="16" x="32" y="176" />
+            <rect height="16" width="48" x="48" y="224" />
+            <rect height="16" width="64" x="96" y="208" />
+            <rect height="16" width="48" x="160" y="224" />
+            <rect height="48" width="16" x="208" y="176" />
+            <rect height="96" width="16" x="224" y="80" />
+            <rect height="32" width="16" x="208" y="48" />
+            <rect height="16" width="32" x="176" y="32" />
+            <rect height="64" width="32" x="160" y="96" />
+          </g>
+          <g id="fill">
+            <path class="st0" d="
+	M208,80V48H176V32H80V48H48V80H32V176H48V224H96V208H160V224H208V176H224V80H208z
+	M96,160 H64V96H96V160z
+	M192,160 H160V96H192V160z" />
+          </g>
+        </g>
+        <style>
+          #outline * {
+            fill: black;
+          }
+        </style>
+      </defs>
+    </svg>
+
+    <!-- MARK: Body
+    -->
+
+    <h1 class="fontExtraLight fontSonoMono">
+      Logicer's <span class="revealer" onclick=""><span id="revealingPink" class="revealing">Pink </span><span
+          id="revealingPicker" class="revealing">Picker</span></span>
+    </h1>
+
+    <form method="dialog">
+      <div id="controls">
+
+        <!-- eslint-disable @html-eslint/use-baseline -->
+        <input id="shareCode" type="text" class="fontSono hideFontInChildren" aria-label="Share Code"
+          autocapitalize="off" autocomplete="off" placeholder="Share Code" size="20" spellcheck="false" tabindex="0"
+          title="View someone else's choices">
+        <!-- eslint-enable @html-eslint/use-baseline -->
+
+        <div id="controlButtons">
+          <input id="showHide" type="checkbox" class="hidden" aria-hidden="true" tabindex="0">
+          <label class="button fontAwesome hideFontInChildren" aria-label="Show / Hide" for="showHide" role="button"
+            tabindex="-1" title="Show hidden colours"></label>
+
+          <button id="shareButton" type="button" tabindex="0"><i class="fa-solid fontAwesome" aria-label="Share"
+              hidden></i></button>
+
+          <button id="undoButton" type="button" disabled tabindex="0" title="Undo"><i class="fa-solid fontAwesome"
+              aria-label="Undo">
+              <!-- undo -->
+              &#xf0e2
+            </i></button>
+          <button id="redoButton" type="button" disabled tabindex="0" title="Redo"><i class="fa-solid fontAwesome"
+              aria-label="Redo">
+              <!-- redo -->
+              &#xf01e
+            </i></button>
+
+          <button id="resetButton" type="button" aria-label="Reset" disabled tabindex="0"
+            title="Reset choices to defaults"><i class="fa-solid fontAwesome">
+              <!-- bin -->
+              &#xf1f8
+            </i></button>
+        </div>
+      </div>
+      <div id="emptyInfo">
+        <i class="fa-solid fontAwesome">
+          <!--file-question-->
+          &#xe4ef
+        </i>
+        <h2 class="fontSono">No colours selected</h2>
+        <label class="button fontSono hideFontInChildren" for="showHide" role="button"><span>Show Hidden
+            Colours</span></label>
+      </div>
+    </form>
+
+    <form id="iconGrid" method="dialog">
+    </form>
+
+    <!-- MARK: Show/Hide Scripts
+    -->
+    <script>
+      /** @type {HTMLInputElement | null} */
+      const showHide = document.querySelector("#showHide");
+      if (showHide !== null) {
+        showHide.checked = localStorage.getItem("showHide") === "true";
+        showHide.addEventListener("input", () => {
+          localStorage.setItem("showHide", showHide.checked.toString());
+        });
+      }
+    </script>
+
+    <!-- MARK: Mask Scripts
+    -->
+    <script>
+      class IconGridMask extends EventTarget {
+        static defaultMask = IconGridMask.deserialise("AA");
+
+        /** @type {bigint} */
+        #mask = IconGridMask.defaultMask;
+
+        /** @type {bigint[]} */
+        #undoStack = IconGridMask.#parseUndoRedoStack(
+          localStorage.getItem("undoStack") ?? "[]"
+        );
+        /** @type {bigint[]} */
+        #redoStack = IconGridMask.#parseUndoRedoStack(
+          localStorage.getItem("redoStack") ?? "[]"
+        );
+
+        constructor() {
+          super();
+
+          const storedMask = localStorage.getItem("mask");
+          if (storedMask !== null) this.#mask = IconGridMask.deserialise(storedMask);
+
+          if (location.hash !== "") {
+            const oldMask = this.#mask;
+
+            this.deserialiseAndUpdate(location.hash.replaceAll("#", ""));
+
+            if (this.#mask !== oldMask) {
+              this.#undoStack = [];
+              this.#redoStack = [];
+              this.#saveUndoRedoState();
+            }
+          }
+
+          this.#update();
+        }
+
+        /**
+         * Cascade updates when the mask is changed.
+         *
+         * @param {bigint} oldMask The previous mask.
+         */
+        #update(oldMask = this.#mask) {
+          const base64Mask = this.serialise();
+          localStorage.setItem("mask", base64Mask);
+          history.replaceState({ mask: this.#mask }, "", `#${base64Mask}`);
+
+          this.dispatchEvent(
+            new CustomEvent("update", { detail: { newMask: this.#mask } })
+          );
+
+          let sanitisedOldMask = oldMask;
+
+          if (sanitisedOldMask === this.#mask) {
+            // Simulate toggling all
+            sanitisedOldMask = this.#mask ^ BigInt.asUintN(icons.length, ~0n);
+          }
+
+          let delta = this.#mask ^ sanitisedOldMask;
+          let index = 1;
+          while (delta !== 0n) {
+            if (delta & 0b1n) {
+              this.dispatchEvent(new CustomEvent(`selectionChanged-${index}`));
+            }
+            delta >>= 1n;
+            index++;
+          }
+        }
+
+        /**
+         * @typedef {{canUndo: boolean, canRedo: boolean}} UndoRedoState
+         */
+
+        /**
+         * Get the current ability to undo or redo.
+         *
+         * @returns {UndoRedoState} The current ability to undo or redo.
+         */
+        get undoRedoState() {
+          return {
+            canRedo: this.#redoStack.length > 0,
+            canUndo: this.#undoStack.length > 0
+          };
+        }
+
+        /**
+         * The current mask.
+         *
+         * @returns {bigint} The current mask.
+         */
+        get mask() {
+          return this.#mask;
+        }
+
+        set mask(rawNewMask) {
+          // Trim extraneous bits
+          const newMask = BigInt.asUintN(icons.length, rawNewMask);
+
+          if (this.#mask === newMask) return;
+
+          const oldMask = this.#mask;
+          this.#undoStack.push(oldMask);
+          this.#redoStack = [];
+          this.#saveUndoRedoState();
+
+          this.#mask = newMask;
+
+          this.#update(oldMask);
+        }
+
+        /**
+         * Convert a given mask into a printable base64 representation.
+         *
+         * The base64 string is a custom format to optimise manual entries on base64 strings. It is not a 1:1 mapping of bits.
+         *
+         * @param {bigint} mask The mask to convert.
+         * @returns {string} A base64 string representing the mask.
+         */
+        static serialise(mask) {
+          // Make place value left to right so a partial string's mask mostly matches the final mask.
+          const bytes = [...mask.toString(2)]
+            // eslint-disable-next-line unicorn/no-array-reduce
+            .reduceRight((/** @type {string[][]} */ bytes, bit, index, bits) => {
+              if ((bits.length - index - 1) % 8 === 0) {
+                bytes.push([bit]);
+              } else {
+                bytes.at(-1)?.push(bit);
+              }
+              return bytes;
+            }, [])
+            .map((byte) => {
+              return Number.parseInt(byte.join("").padEnd(8, "0"), 2);
+            });
+
+          // Remove trailing null bytes
+          while (bytes.at(-1) === 0 && bytes.length > 1) bytes.pop();
+
+          // Byte-wise, not unicode
+          // eslint-disable-next-line unicorn/prefer-code-point
+          return btoa(String.fromCharCode(...bytes))
+            .replaceAll("+", "-")
+            .replaceAll("/", "_")
+            .replace(/=+$/v, "");
+        }
+
+        /**
+         * Convert a base64 string into its mask equivalent.
+         *
+         * The base64 string is a custom format to optimise manual entries on base64 strings. It is not a 1:1 mapping of bits.
+         *
+         * @param {string} base64 The base64 string representing the mask.
+         * @returns {bigint} The equivalent mask.
+         * @throws `InvalidCharacterError` is thrown if the input is not a valid base64 string.
+         */
+        static deserialise(base64) {
+          let padding = base64.length % 4;
+          if (padding === 1) {
+            throw new DOMException(
+              "Input base64url string is the wrong length to determine padding.",
+              "InvalidCharacterError"
+            );
+          } else if (padding === 0) {
+            padding = 4;
+          }
+
+          const newMask = [
+            ...atob(
+              `${base64.replaceAll("-", "+").replaceAll("_", "/")}${Array.from({ length: 5 - padding }).join("=")}`
+            )
+          ]
+            .flatMap((byte) => {
+              // Byte-wise, not unicode
+              // eslint-disable-next-line unicorn/prefer-code-point
+              return [...byte.charCodeAt(0).toString(2).padStart(8, "0")];
+            })
+            .reverse()
+            .join("");
+
+          return BigInt(`0b0${newMask}`);
+        }
+
+        serialise() {
+          return IconGridMask.serialise(this.#mask);
+        }
+
+        /**
+         * Update the mask to the result of deserialising a base64 representation.
+         *
+         * @param {string} base64 The base64 string representing the mask.
+         * @throws `InvalidCharacterError` is thrown if the input is not a valid base64 string.
+         */
+        deserialiseAndUpdate(base64) {
+          try {
+            this.mask = IconGridMask.deserialise(base64);
+          } catch (error) {
+            if (
+              error instanceof DOMException &&
+              error.name === "InvalidCharacterError"
+            ) {
+              console.error(error);
+              return;
+            }
+
+            throw error;
+          }
+        }
+
+        /**
+         * Set the selection of a colour.
+         *
+         * @param {number} index The index of the icon colour to toggle.
+         * @param {boolean | undefined} selection The new selection state of a colour. If omitted, the colour will toggle.
+         */
+        setColourSelection(index, selection) {
+          const indexMask = 1n << BigInt(index - 1);
+          if (selection === undefined) this.mask = this.#mask ^ indexMask;
+          else if (selection) this.mask = this.#mask | indexMask;
+          else this.mask = this.#mask & ~indexMask;
+        }
+
+        /**
+         * Get the current selection state of a colour.
+         *
+         * @param {number} index The index of the icon colour to toggle.
+         * @returns {boolean} The current selection state of a colour.
+         */
+        getColourSelection(index) {
+          return (this.#mask & (1n << BigInt(index - 1))) === 0n;
+        }
+
+        /**
+         * Convert an undo/redo stack to JSON.
+         *
+         * @param {bigint[]} stack The stack to stringify.
+         * @returns {string} The JSON representation of the stack.
+         */
+        static #stringifyUndoRedoStack(stack) {
+          return JSON.stringify(stack, (key, /** @type {unknown} */ element) => {
+            if (typeof element === "bigint") return IconGridMask.serialise(element);
+
+            return element;
+          });
+        }
+
+        /**
+         * Convert JSON to an undo/redo stack.
+         *
+         * @param {string} stackString The JSON representation of the stack.
+         * @returns {bigint[]} The equivalent stack.
+         */
+        static #parseUndoRedoStack(stackString) {
+          // There is no nice way of doing this is js.
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+          return JSON.parse(stackString, (key, /** @type {unknown} */ element) => {
+            if (typeof element === "string") return IconGridMask.deserialise(element);
+
+            return element;
+          });
+        }
+
+        #saveUndoRedoState() {
+          localStorage.setItem(
+            "undoStack",
+            IconGridMask.#stringifyUndoRedoStack(this.#undoStack)
+          );
+          localStorage.setItem(
+            "redoStack",
+            IconGridMask.#stringifyUndoRedoStack(this.#redoStack)
+          );
+        }
+
+        /**
+         * Undo, reverting to the previous mask.
+         *
+         * @param {bigint} lastMask The mask prior to the undo operation.
+         */
+        undo(lastMask) {
+          const newMask = this.#undoStack.pop();
+
+          if (newMask !== undefined) {
+            if (newMask !== lastMask) this.#redoStack.push(lastMask);
+
+            this.#mask = newMask;
+            this.#update(lastMask);
+          }
+
+          this.#saveUndoRedoState();
+        }
+
+        /**
+         * Redo, revert the mask to what it was prior to the last undo.
+         *
+         * @param {bigint} lastMask The mask prior to the redo operation.
+         */
+        redo(lastMask) {
+          const newMask = this.#redoStack.pop();
+
+          if (newMask !== undefined) {
+            if (newMask !== lastMask) this.#undoStack.push(lastMask);
+
+            this.#mask = newMask;
+            this.#update(lastMask);
+          }
+
+          this.#saveUndoRedoState();
+        }
+      }
+
+      const mask = new IconGridMask();
+
+      window.addEventListener("hashchange", ({ newURL: newURLString }) => {
+        const newURL = new URL(newURLString);
+
+        mask.mask = IconGridMask.deserialise(newURL.hash.replaceAll("#", ""));
+      });
+    </script>
+
+    <!-- MARK: Title Scripts
+    -->
+    <script>
+      // Disable animation whilst resizing window
+      const revealer = document.querySelector(".revealer");
+      // Extra long because Safari resizes before firing
+      const delay = 400;
+      /** @type {ReturnType<typeof setTimeout>} */
+      let timeout;
+      window.addEventListener("resize", () => {
+        clearTimeout(timeout);
+        revealer?.classList.add("resizing");
+        timeout = setTimeout(() => {
+          revealer?.classList.remove("resizing");
+        }, delay);
+      });
+    </script>
+
+    <!-- MARK: Grid Scripts
+    -->
+    <script>
+      const iconGrid = document.querySelector("#iconGrid");
+
+      const colourTestCanvasContext = document
+        .createElement("canvas")
+        .getContext("2d");
+      /**
+       * Return a consistent representation of any CSS colour, even if they are formatted differently (e.g. #FF0000 === "red").
+       *
+       * @param {string} colour The CSS colour to standardise.
+       * @returns {string} A consistent representation of the colour.
+       */
+      function standardiseColour(colour) {
+        if (colourTestCanvasContext === null) {
+          console.error(
+            "Unable to standardise colour: test canvas could not be found"
+          );
+          return colour;
+        }
+        colourTestCanvasContext.fillStyle = colour;
+        return colourTestCanvasContext.fillStyle;
+      }
+
+      /** @type {{[key: string]: number}} */
+      const completedColours = {};
+      let hasDisplayedIconWarningGroup = false;
+
+      const iconCandidates = icons.map((icon, index) => {
+        if (icon === undefined) return;
+
+        if (icon.index !== index + 1) {
+          if (!hasDisplayedIconWarningGroup) {
+            console.groupCollapsed("Icon Data Issues");
+            hasDisplayedIconWarningGroup = true;
+          }
+          console.warn(
+            `Icon candidate ${icon.name === undefined ? "" : `"${icon.name}" `}(colour: ${icon.colour}) has an index mismatch and won't be displayed. Expected ${index + 1}; found ${icon.index}.`
+          );
+          return;
+        }
+
+        const standardisedColour = standardiseColour(icon.colour);
+        if (Object.hasOwn(completedColours, standardisedColour)) {
+          if (!hasDisplayedIconWarningGroup) {
+            console.groupCollapsed("Icon Data Issues");
+            hasDisplayedIconWarningGroup = true;
+          }
+          console.warn(
+            `Icon candidate ${icon.name === undefined ? "" : `"${icon.name}" `}#${icon.index} (colour: ${icon.colour}) has a duplicated colour and won't be displayed. This colour was first used with icon #${completedColours[standardisedColour]}.`
+          );
+          return;
+        }
+        completedColours[standardisedColour] = icon.index;
+
+        const candidate = document.createElement("div");
+
+        /** @type {SVGElement} */
+        const iconElement = document.createElementNS(
+          "http://www.w3.org/2000/svg",
+          "svg"
+        );
+        iconElement.setAttribute("viewBox", "0 0 256 256");
+
+        /** @type {SVGUseElement} */
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "use");
+        path.setAttribute("href", "#icon");
+        path.style.fill = icon.colour;
+        iconElement.append(path);
+
+        const itemControls = document.createElement("div");
+        itemControls.classList.add("itemControls");
+
+        const indexLabel = document.createElement("p");
+        indexLabel.classList.add("fontSono");
+        if (!colourNamesDisabled) {
+          indexLabel.title = icon.name ?? `CSS colour only: ${icon.colour}`;
+        }
+        indexLabel.textContent = icon.index.toString();
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.id = `icon-${icon.index}`;
+        checkbox.checked = mask.getColourSelection(icon.index);
+        checkbox.classList.add("hidden");
+        checkbox.ariaHidden = "true";
+        checkbox.tabIndex = -1;
+        checkbox.addEventListener("change", () => {
+          mask.setColourSelection(icon.index, !checkbox.checked);
+        });
+        mask.addEventListener(`selectionChanged-${icon.index}`, () => {
+          checkbox.checked = mask.getColourSelection(icon.index);
+        });
+
+        const checkboxButton = document.createElement("label");
+        checkboxButton.htmlFor = checkbox.id;
+        checkboxButton.classList.add("button", "hideFontInChildren", "fontAwesome");
+        checkboxButton.role = "button";
+        checkboxButton.tabIndex = 0;
+        checkboxButton.ariaLabel = `toggle icon ${icon.index}`;
+
+        itemControls.append(indexLabel, checkbox, checkboxButton);
+        candidate.append(iconElement, itemControls);
+        return candidate;
+      }).filter((iconCandidate) => {
+        return iconCandidate !== undefined;
+      });
+
+      iconGrid.append(...iconCandidates);
+
+      if (hasDisplayedIconWarningGroup) console.groupEnd();
+    </script>
+
+    <!-- MARK: Main Scripts:
+    -->
+    <script>
+      for (const form of document.querySelectorAll("form")) {
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
+        });
+        form.addEventListener("keypress", (event) => {
+          if (event.key === "Enter") {
+            event.preventDefault();
+          }
+        });
+      }
+
+      /**
+       * Called once all fonts have loaded.
+       *
+       * @param {string} selector A css style selector for element now ready to display.
+       */
+      function fontsHaveLoaded(selector) {
+        for (const element of document.querySelectorAll(selector)) {
+          setTimeout(() => {
+            element.classList.add("loaded");
+          }, 0);
+        }
+      }
+
+      /* eslint-disable unicorn/prefer-top-level-await */
+      promises.push(
+        document.fonts.load("200 1rem Sono").then(() => {
+          fontsHaveLoaded(".fontSono, .fontSonoMono");
+        }),
+        document.fonts
+          .load(
+            window.getComputedStyle(document.body).getPropertyValue("--fa-font-solid")
+          )
+          .then(() => {
+            fontsHaveLoaded(".fontAwesome");
+          })
+      );
+      /* eslint-enable unicorn/prefer-top-level-await */
+    </script>
+
+    <!-- MARK: Share Scripts
+    -->
+    <script>
+      const shareData = {
+        text: "Check out my recommendations for shades of pink. 🩷",
+        title: "Logicer's PP",
+        get url() {
+          return location.href;
+        }
+      };
+      const shouldShare = navigator.canShare?.(shareData) ?? false;
+
+      /** @type {HTMLButtonElement | null} */
+      const shareButton = document.querySelector("button#shareButton");
+      shareButton?.addEventListener("click", () => {
+        let promise;
+        if (shouldShare) {
+          if (navigator.canShare(shareData)) promise = navigator.share(shareData);
+          throw new Error(
+            "Predetermined sharing was supported at page load but is no longer available."
+          );
+        } else {
+          promise = navigator.clipboard.writeText(shareData.url).then(() => {
+            alert("Copied Link!");
+          });
+        }
+
+        promise.catch((/** @type {unknown} */ error) => {
+          throw error;
+        });
+      });
+
+      if (shareButton !== null) {
+        shareButton.title = shouldShare
+          ? "Share selection"
+          : "Copy link to selection";
+        shareButton.ariaLabel = shouldShare ? "Share" : "Copy";
+      }
+
+      const shareIcon = shareButton?.querySelector("i") ?? undefined;
+      if (shareIcon !== undefined) {
+        shareIcon.textContent = shouldShare
+          ? /* share */ "\uE09A"
+          : /* link */ "\uF0C1";
+        shareIcon.hidden = false;
+      }
+    </script>
+
+    <!-- MARK: Undo / Redo Buttons
+    -->
+    <script>
+      /** @type {HTMLButtonElement | null} */
+      const undoButton = document.querySelector("button#undoButton");
+      /** @type {HTMLButtonElement | null} */
+      const redoButton = document.querySelector("button#redoButton");
+
+      /**
+       * Update controls in regards to whether the user is currently able to undo/redo.
+       *
+       * @param {UndoRedoState} undoRedoState The current ability to undo/redo.
+       */
+      function setUndoRedo(undoRedoState) {
+        if (undoButton !== null) {
+          undoButton.disabled = !undoRedoState.canUndo;
+        }
+        if (redoButton !== null) {
+          redoButton.disabled = !undoRedoState.canRedo;
+        }
+      }
+
+      mask.addEventListener("update", () => {
+        setUndoRedo(mask.undoRedoState);
+      });
+      setUndoRedo(mask.undoRedoState);
+
+      undoButton?.addEventListener("click", () => {
+        mask.undo(mask.mask);
+      });
+      redoButton?.addEventListener("click", () => {
+        mask.redo(mask.mask);
+      });
+    </script>
+
+    <!-- MARK: Reset Scripts
+    -->
+    <script>
+      /** @type {HTMLButtonElement | null} */
+      const resetButton = document.querySelector("button#resetButton");
+
+      resetButton?.addEventListener("click", () => {
+        mask.mask = IconGridMask.defaultMask;
+      });
+
+      if (resetButton !== null) {
+        resetButton.disabled = mask.mask === IconGridMask.defaultMask;
+        mask.addEventListener("update", () => {
+          resetButton.disabled = mask.mask === IconGridMask.defaultMask;
+        });
+      }
+    </script>
+
+    <!-- MARK: Undo / Redo Listener
+    -->
+    <script>
+      // Inspired by https://github.com/samthor/undoer
+      // Witchcraft
+
+      class UndoRedoListener {
+        /** @type {HTMLDivElement} */
+        #field = document.createElement("div");
+
+        #duringUpdate = 0;
+        #lastSeenMask = 0n;
+        #beforeHandled = 0;
+
+        undo;
+        redo;
+
+        /**
+         * Create a new listener for undo/redo events.
+         *
+         * @param {(lastMask: bigint) => void} undo Called when an undo occurs.
+         * @param {(lastMask: bigint) => void} redo Called when a redo occurs.
+         */
+        constructor(undo, redo) {
+          this.undo = undo;
+          this.redo = redo;
+
+          this.#lastSeenMask = mask.mask;
+
+          this.#field.id =
+            "superSecretUndoRedoStateBoxBecauseBrowsersDontMakeMyJobEasy";
+          this.#field.setAttribute("aria-hidden", "true");
+
+          this.#field.tabIndex = -1;
+
+          this.#field.contentEditable = "true";
+
+          document.body.append(this.#field);
+
+          Promise.resolve()
+            .then(async () => {
+              const previousFocus = document.activeElement;
+
+              this.#duringUpdate += 1;
+              try {
+                this.#field.classList.add("unhide");
+                this.#field.focus();
+
+                document.execCommand("selectAll");
+                document.execCommand("insertText", false, "0");
+
+                // Safari hates me
+                // Sometimes it will decides to collapse the intermediary 0 middle state to just ["", "1"] so we can't always listen reliably
+                await /** @type {Promise<void>} */ (
+                  new Promise((resolve) => {
+                    setTimeout(() => {
+                      document.execCommand("selectAll");
+                      document.execCommand("insertText", false, "1");
+                      resolve();
+                    }, 400);
+                  })
+                );
+
+                this.#normaliseState();
+              } finally {
+                this.#field.classList.remove("unhide");
+              }
+              this.#duringUpdate -= 1;
+              if (previousFocus instanceof HTMLElement) previousFocus.focus();
+
+              this.#field.addEventListener("focus", () => {
+                // Safari will through a fit if we blur immediately.
+                window.setTimeout(() => {
+                  this.#field.blur();
+                }, 0);
+              });
+
+              document.addEventListener("beforeinput", (event) => {
+                this.#lastSeenMask = mask.mask;
+
+                if (event.target !== this.#field) {
+                  if (event.inputType === "historyUndo") {
+                    this.#beforeHandled += 1;
+                    undo(this.#lastSeenMask);
+                  } else if (event.inputType === "historyRedo") {
+                    this.#beforeHandled += 1;
+                    redo(this.#lastSeenMask);
+                  }
+                }
+              });
+
+              document.addEventListener("input", (event) => {
+                if (!(event instanceof InputEvent)) return;
+
+                if (this.#beforeHandled > 0) {
+                  this.#beforeHandled -= 1;
+                } else if (
+                  this.#duringUpdate <= 0 &&
+                  (event.inputType === "historyUndo" ||
+                    event.inputType === "historyRedo")
+                ) {
+                  const state = mask.undoRedoState;
+
+                  let newValue = Number(this.#currentValue);
+
+                  if (!state.canUndo) newValue++;
+                  if (!state.canRedo) newValue--;
+
+                  if (newValue === -1) undo(this.#lastSeenMask);
+                  if (newValue === 1) redo(this.#lastSeenMask);
+
+                  this.#duringUpdate += 1;
+                  this.#normaliseState();
+                  this.#duringUpdate -= 1;
+                }
+
+                // Clear selection in case the browser decides to do so.
+                const selection = window.getSelection();
+                // Typescript can't handle the optional chain
+                // eslint-disable-next-line @typescript-eslint/prefer-optional-chain
+                if (selection !== null && selection.containsNode(this.#field, true)) {
+                  selection.removeAllRanges();
+                }
+              });
+
+              mask.addEventListener("update", () => {
+                this.#duringUpdate += 1;
+                this.#normaliseState();
+                this.#duringUpdate -= 1;
+              });
+            })
+            .catch((/** @type {unknown} */ error) => {
+              throw error;
+            });
+        }
+
+        get #currentValue() {
+          if (this.#field.textContent === "") return -1;
+          return Number(this.#field.textContent);
+        }
+
+        #normaliseState() {
+          const state = mask.undoRedoState;
+          const newValue = this.#currentValue;
+          let delta = 0;
+
+          if (newValue === 1) delta += -1;
+          if (newValue === -1) delta += 1;
+
+          if (!state.canUndo) delta += -1;
+          if (!state.canRedo) delta += 1;
+
+          while (delta < 0) {
+            document.execCommand("undo");
+            delta += 1;
+          }
+
+          while (delta > 0) {
+            document.execCommand("redo");
+            delta -= 1;
+          }
+        }
+      }
+
+      /** @type {UndoRedoListener | undefined} */
+      let undoRedoListener;
+
+      /**
+       * Create a new instance of the UndoRedoListener.
+       */
+      function initialiseUndoRedoListener() {
+        if (undoRedoListener === undefined) {
+          const initialState = mask.undoRedoState;
+
+          if (initialState.canUndo || initialState.canRedo) {
+            undoRedoListener = new UndoRedoListener(
+              (lastMask) => {
+                mask.undo(lastMask);
+              },
+              (lastMask) => {
+                mask.redo(lastMask);
+              }
+            );
+          }
+        }
+
+        if (undoRedoListener !== undefined) {
+          mask.removeEventListener("update", initialiseUndoRedoListener);
+        }
+      }
+      if (!undoRedoListenerDisabled) {
+        mask.addEventListener("update", initialiseUndoRedoListener);
+        initialiseUndoRedoListener();
+      }
+    </script>
+
+    <!-- MARK: Share Code Scripts
+    -->
+    <script>
+      /** @type {HTMLInputElement | null} */
+      const shareCode = document.querySelector("input#shareCode");
+
+      shareCode?.addEventListener("input", (event) => {
+        if (!(event instanceof InputEvent)) {
+          throw new TypeError(
+            "Event listener for `input` was not called with an InputEvent???"
+          );
+        }
+
+        if (event.inputType === "historyUndo" || event.inputType === "historyRedo") {
+          return;
+        }
+
+        shareCode.value = shareCode.value.replaceAll(/[^\w\-]/gv, "");
+      });
+
+      shareCode?.addEventListener("keypress", (event) => {
+        if (event.key === "Enter") {
+          shareCode.blur();
+        }
+      });
+
+      shareCode?.addEventListener("blur", () => {
+        try {
+          mask.deserialiseAndUpdate(shareCode.value);
+        } finally {
+          shareCode.value = mask.serialise();
+        }
+      });
+
+      if (shareCode !== null) {
+        shareCode.value = mask.serialise();
+        mask.addEventListener("update", () => {
+          shareCode.value = mask.serialise();
+        });
+      }
+    </script>
+
+    <!-- MARK: Misc
+    -->
+    <script>
+      Promise.allSettled(promises).catch((errors) => {
+        for (const error of errors) {
+          console.error(error);
+        }
+      });
+    </script>
+  </body>
+
+</html>
