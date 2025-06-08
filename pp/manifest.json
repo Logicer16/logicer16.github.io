@@ -6,8 +6,6 @@
   "categories": ["utilities"],
 
   "start_url": "./",
-  "background_color": "canvas",
-  "theme_color": "canvas",
   "display_override": ["standalone", "minimal-ui", "browser"],
   "display": "standalone",
 
