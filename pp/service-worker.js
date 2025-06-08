@@ -41,7 +41,9 @@ const files = {
 };
 
 const fileURLs = new Set(
-  Object.keys(files).map((element) => formatURL(element))
+  Object.keys(files).map((element) => {
+    return formatURL(element).href;
+  })
 );
 
 // Register service worker if script is running in the browser
@@ -83,7 +85,7 @@ async function addFilesToCache() {
   const cache = await caches.open(cacheId);
   const cachedURLs = new Set(
     (await cache.keys()).map((request) => {
-      return formatURL(request.url);
+      return formatURL(request.url).href;
     })
   );
 
@@ -113,7 +115,7 @@ async function pruneCache() {
   const cache = await caches.open(cacheId);
   for (const key of await cache.keys()) {
     const url = formatURL(key.url);
-    if (!fileURLs.has(url)) {
+    if (!fileURLs.has(url.href)) {
       promises.push(cache.delete(key));
     }
   }
