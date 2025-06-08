@@ -165,8 +165,9 @@ function registerServiceWorker() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register("./service-worker.js")
-      .then(() => {
+      .then((registration) => {
         console.log("Service worker registered");
+        return registration.update();
       })
       .catch((/** @type {unknown} */ error) => {
         console.warn("Service worker registration failed", error);
