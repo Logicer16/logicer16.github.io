@@ -10,6 +10,8 @@ const cacheId = "SW Cache - v1";
 
 /** @type {Files} */
 const files = {
+  "./": "1",
+  "./manifest.json": "1",
   "./img/pp%20icon%20-%2016x16.png": "1",
   "./img/pp%20icon%20-%2032x32.png": "1",
   "./img/pp%20icon%20-%2048x48.png": "1",
@@ -29,11 +31,10 @@ const files = {
   "./img/pp%20icon%20masked%20-%20256x256.png": "1",
   "./img/pp%20icon%20masked%20-%20512x512.png": "1",
   "./img/pp%20icon%20masked%20-%201024x1024.png": "1",
-  "./": "1",
-  "./manifest.json": "1",
+  "./fonts/sono/sono-200.ttf": "1",
+  "./fonts/sono/sono-400.ttf": "1",
   "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css": "1",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2": "1",
-  "https://fonts.gstatic.com/l/font?kit=aFTb7PNiY3U2EKnF-D2RI6epTYvbdnFlkoZTSonUHf9hSzCKKmdGmrqk3r8Y8BKOP0W056BQkIsXGSm7NpxxyMo7anYH8opYXth7xV9nM7ka1Q0H5K1CLprVvG3XnGtaxIdoeQMG4LFKmxY&skey=2b68a807737779ac&v=v6": "1"
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2": "1"
 };
 
 // Register service worker if script is running in the browser
