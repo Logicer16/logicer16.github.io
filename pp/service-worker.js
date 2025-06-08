@@ -125,7 +125,11 @@ async function pruneCache() {
  */
 function initServiceWorker() {
   self.addEventListener("install", (/** @type {ExtendableEvent} */ event) => {
-    event.waitUntil(addFilesToCache());
+    const promise = addFilesToCache().then(() => {
+      return self.skipWaiting()
+    });
+
+    event.waitUntil(promise);
   });
 
   self.addEventListener("activate", (/** @type {ExtendableEvent} */ event) => {
