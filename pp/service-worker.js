@@ -30,7 +30,10 @@ const files = {
   "pp/img/pp icon masked - 512x512.png": "1",
   "pp/img/pp icon masked - 1024x1024.png": "1",
   "pp/": "1",
-  "pp/manifest.json": "1"
+  "pp/manifest.json": "1",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css": "1",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2": "1",
+  "https://fonts.gstatic.com/l/font?kit=aFTb7PNiY3U2EKnF-D2RI6epTYvbdnFlkoZTSonUHf9hSzCKKmdGmrqk3r8Y8BKOP0W056BQkIsXGSm7NpxxyMo7anYH8opYXth7xV9nM7ka1Q0H5K1CLprVvG3XnGtaxIdoeQMG4LFKmxY&skey=2b68a807737779ac&v=v6": "1"
 };
 
 // Register service worker if script is running in the browser
@@ -121,6 +124,13 @@ async function addFilesToCache() {
 async function pruneCache() {
   /** @type {Promise<boolean>[]} */
   const promises = [];
+
+  for await (const cacheName of caches.keys()) {
+    if (cacheName !== cacheId) {
+      console.log(`Deleting outdated cache: ${cacheName}`);
+      promises.push(caches.delete(cacheName));
+    }    
+  }
 
   const cache = await caches.open(cacheId);
   for (const key of await cache.keys()) {
