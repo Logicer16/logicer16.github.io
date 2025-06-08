@@ -4,7 +4,8 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-const cacheId = "SW Cache - v1";
+const cacheVersion = "1";
+const cacheId = `SW Cache - v${cacheVersion}`;
 
 /** @typedef {Record<string, string>} Files */
 
@@ -33,9 +34,15 @@ const files = {
   "./img/pp%20icon%20masked%20-%201024x1024.png": "1",
   "./fonts/sono/sono-200.ttf": "1",
   "./fonts/sono/sono-400.ttf": "1",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css": "1",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2": "1"
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css":
+    "1",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2":
+    "1"
 };
+
+const fileURLs = new Set(
+  Object.keys(files).map((element) => formatURL(element))
+);
 
 // Register service worker if script is running in the browser
 if (typeof window === "undefined") {
@@ -45,54 +52,26 @@ if (typeof window === "undefined") {
 }
 
 /**
- * Format a local path to include it's revision.
+ * Format a url to include it's revision.
  *
- * @param {keyof Files} path The path of the file.
- * @returns {string} The formatted path.
+ * @param {string | URL} url A URL or path relative to the service worker script's url.
+ * @returns {URL} The formatted url.
  */
-function formatPath(path) {
-  // As long as there are no other query parameters (which there shouldn't be for cacheable resources) this should keep working
-  return `${path}?__WB_REVISION__=${files[path]}`;
+function formatURL(url) {
+  url = normaliseURL(url)
+  url.hash = "";
+  url.searchParams.set("__WB_REVISION__", files[url.href] ?? cacheVersion);
+  return url;
 }
 
 /**
- * Add a HTTP response header to a response.
+ * Normalise a URL or relative path to a URL object.
  *
- * @param {Headers} headers The set of headers to add the header to.
- * @param {string} name The name of the header to add.
- * @param {string} value The value of the new header.
- * @returns {Headers} The updated set of headers.
+ * @param {string | URL} url A URL or path relative to the service worker script's url.
+ * @returns {URL} A URL object representing the url provided.
  */
-// function addHeader(headers, name, value) {
-//   const newHeaders = new Headers(headers);
-//   if (!newHeaders.has(name)) newHeaders.set(name, value);
-//   return newHeaders;
-// }
-
-/**
- * Adds a HTTP response headers to a response.
- *
- * @param {Response} originalResponse The response to add the headers to.
- * @returns {Response} The modified response.
- */
-function addHeaders(originalResponse) {
-  const newHeaders = originalResponse.headers;
-
-  return new Response(originalResponse.body, {
-    headers: newHeaders,
-    status: originalResponse.status,
-    statusText: originalResponse.statusText
-  });
-}
-
-/**
- * Extract the path component of a URL.
- *
- * @param {URL} url The url to extract the path from.
- * @returns {string} The url's path component.
- */
-function extractPath(url) {
-  return url.href.slice(url.href.indexOf(url.host) + url.host.length);
+function normaliseURL(url) {
+  return new URL(url, self.location.href);
 }
 
 /**
@@ -102,17 +81,15 @@ function extractPath(url) {
  */
 async function addFilesToCache() {
   const cache = await caches.open(cacheId);
-  const cachedPaths = new Set(
+  const cachedURLs = new Set(
     (await cache.keys()).map((request) => {
-      return extractPath(new URL(request.url));
+      return formatURL(request.url);
     })
   );
-  const filePaths = Object.keys(files).map((entry) => {
-    return formatPath(entry);
-  });
+
   return Promise.all(
-    filePaths.map(async (path) => {
-      if (!cachedPaths.has(path)) return cache.add(path);
+    [...fileURLs].map(async (url) => {
+      if (!cachedURLs.has(url)) return cache.add(url);
     })
   );
 }
@@ -126,21 +103,17 @@ async function pruneCache() {
   /** @type {Promise<boolean>[]} */
   const promises = [];
 
-  for await (const cacheName of caches.keys()) {
+  for (const cacheName of await caches.keys()) {
     if (cacheName !== cacheId) {
       console.log(`Deleting outdated cache: ${cacheName}`);
       promises.push(caches.delete(cacheName));
-    }    
+    }
   }
 
   const cache = await caches.open(cacheId);
   for (const key of await cache.keys()) {
-    const url = new URL(key.url);
-    const path = extractPath(url);
-    if (
-      !(url.pathname in Object.keys(files)) ||
-      path !== formatPath(url.pathname)
-    ) {
+    const url = formatURL(key.url);
+    if (!fileURLs.has(url)) {
       promises.push(cache.delete(key));
     }
   }
@@ -162,6 +135,7 @@ function initServiceWorker() {
   self.addEventListener("fetch", (/** @type {FetchEvent} */ event) => {
     /**
      * Responds to a fetch request. Adds the cross origin isolation headers and falls back to the local cache if the server is unavailable.
+     *
      * @returns {Promise<Response>} The processed fetch response.
      */
     async function respondToFetch() {
@@ -171,17 +145,13 @@ function initServiceWorker() {
 
       // Resources cached on install can always be served from the cache
       const cache = await caches.open(cacheId);
-      const path = url.pathname;
-      if (Object.keys(files).includes(path)) {
-        const cacheMatch = await cache.match(formatPath(path));
-        if (cacheMatch !== undefined) {
-          return addHeaders(cacheMatch);
-        }
+
+      const cacheMatch = await cache.match(formatURL(url));
+      if (cacheMatch !== undefined) {
+        return cacheMatch;
       }
 
-      const response = await fetch(request);
-
-      return addHeaders(response);
+      return fetch(request);
     }
 
     event.respondWith(respondToFetch());
