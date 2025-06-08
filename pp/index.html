@@ -1341,7 +1341,7 @@
         let promise;
         if (shouldShare) {
           if (navigator.canShare(shareData)) promise = navigator.share(shareData);
-          throw new Error(
+          else throw new Error(
             "Predetermined sharing was supported at page load but is no longer available."
           );
         } else {
