@@ -4,44 +4,40 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-const cacheVersion = "1";
+const cacheVersion = "2";
 const cacheId = `SW Cache - v${cacheVersion}`;
 
-/** @typedef {Record<string, string>} Files */
-
-/** @type {Files} */
-const files = {
-  "./": "2",
-  "./manifest.json": "1",
-  "./img/pp%20icon%20-%2016x16.png": "1",
-  "./img/pp%20icon%20-%2032x32.png": "1",
-  "./img/pp%20icon%20-%2048x48.png": "1",
-  "./img/pp%20icon%20-%2064x64.png": "1",
-  "./img/pp%20icon%20-%2096x96.png": "1",
-  "./img/pp%20icon%20-%20112x112.png": "1",
-  "./img/pp%20icon%20-%20128x128.png": "1",
-  "./img/pp%20icon%20-%20144x144.png": "1",
-  "./img/pp%20icon%20-%20160x160.png": "1",
-  "./img/pp%20icon%20-%20176x176.png": "1",
-  "./img/pp%20icon%20-%20192x192.png": "1",
-  "./img/pp%20icon%20-%20256x256.png": "1",
-  "./img/pp%20icon%20-%20512x512.png": "1",
-  "./img/pp%20icon%20-%201024x1024.png": "1",
-  "./img/pp%20icon%20masked%20-%2064x64.png": "1",
-  "./img/pp%20icon%20masked%20-%20128x128.png": "1",
-  "./img/pp%20icon%20masked%20-%20256x256.png": "1",
-  "./img/pp%20icon%20masked%20-%20512x512.png": "1",
-  "./img/pp%20icon%20masked%20-%201024x1024.png": "1",
-  "./fonts/sono/sono-200.ttf": "1",
-  "./fonts/sono/sono-400.ttf": "1",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css":
-    "1",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2":
-    "1"
-};
+/** @type {string[]} */
+const files = [
+  "./",
+  "./manifest.json",
+  "./img/pp%20icon%20-%2016x16.png",
+  "./img/pp%20icon%20-%2032x32.png",
+  "./img/pp%20icon%20-%2048x48.png",
+  "./img/pp%20icon%20-%2064x64.png",
+  "./img/pp%20icon%20-%2096x96.png",
+  "./img/pp%20icon%20-%20112x112.png",
+  "./img/pp%20icon%20-%20128x128.png",
+  "./img/pp%20icon%20-%20144x144.png",
+  "./img/pp%20icon%20-%20160x160.png",
+  "./img/pp%20icon%20-%20176x176.png",
+  "./img/pp%20icon%20-%20192x192.png",
+  "./img/pp%20icon%20-%20256x256.png",
+  "./img/pp%20icon%20-%20512x512.png",
+  "./img/pp%20icon%20-%201024x1024.png",
+  "./img/pp%20icon%20masked%20-%2064x64.png",
+  "./img/pp%20icon%20masked%20-%20128x128.png",
+  "./img/pp%20icon%20masked%20-%20256x256.png",
+  "./img/pp%20icon%20masked%20-%20512x512.png",
+  "./img/pp%20icon%20masked%20-%201024x1024.png",
+  "./fonts/sono/sono-200.ttf",
+  "./fonts/sono/sono-400.ttf",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2",
+];
 
 const fileURLs = new Set(
-  Object.keys(files).map((element) => {
+  files.map((element) => {
     return formatURL(element).href;
   })
 );
@@ -62,7 +58,7 @@ if (typeof window === "undefined") {
 function formatURL(url) {
   url = normaliseURL(url)
   url.hash = "";
-  url.searchParams.set("__WB_REVISION__", files[url.href] ?? cacheVersion);
+  url.searchParams.set("__WB_REVISION__", cacheVersion);
   return url;
 }
 
