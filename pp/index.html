@@ -45,6 +45,7 @@
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="canvas" media="(prefers-color-scheme: dark)">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <script src="./service-worker.js" defer fetchpriority="low"></script>
 
@@ -769,33 +770,31 @@
           id="revealingPicker" class="revealing">Picker</span></span>
     </h1>
 
-    <form method="dialog">
-      <div id="controls">
+    <form method="dialog" id="controls">
+      <!-- eslint-disable @html-eslint/use-baseline -->
+      <input id="shareCode" type="text" class="fontSono hideFontInChildren" aria-label="Share Code" autocapitalize="off"
+        autocomplete="off" placeholder="Share Code" size="20" spellcheck="false" tabindex="0"
+        title="View someone else's choices">
+      <!-- eslint-enable @html-eslint/use-baseline -->
 
-        <!-- eslint-disable @html-eslint/use-baseline -->
-        <input id="shareCode" type="text" class="fontSono hideFontInChildren" aria-label="Share Code"
-          autocapitalize="off" autocomplete="off" placeholder="Share Code" size="20" spellcheck="false" tabindex="0"
-          title="View someone else's choices">
-        <!-- eslint-enable @html-eslint/use-baseline -->
+      <div id="controlButtons">
+        <input id="showHide" type="checkbox" class="hidden" aria-hidden="true" tabindex="0">
+        <label class="button fontAwesome hideFontInChildren" aria-label="Show / Hide" for="showHide" role="button"
+          tabindex="-1" title="Show hidden colours"></label>
 
-        <div id="controlButtons">
-          <input id="showHide" type="checkbox" class="hidden" aria-hidden="true" tabindex="0">
-          <label class="button fontAwesome hideFontInChildren" aria-label="Show / Hide" for="showHide" role="button"
-            tabindex="-1" title="Show hidden colours"></label>
+        <button id="shareButton" type="button" tabindex="0"><i class="fa-solid fontAwesome" aria-label="Share"
+            hidden></i></button>
 
-          <button id="shareButton" type="button" tabindex="0"><i class="fa-solid fontAwesome" aria-label="Share"
-              hidden></i></button>
-
-          <button id="undoButton" type="button" disabled tabindex="0" title="Undo"><i class="fa-solid fontAwesome"
-              aria-label="Undo">
-              <!-- undo -->
-              &#xf0e2
-            </i></button>
-          <button id="redoButton" type="button" disabled tabindex="0" title="Redo"><i class="fa-solid fontAwesome"
-              aria-label="Redo">
-              <!-- redo -->
-              &#xf01e
-            </i></button>
+        <button id="undoButton" type="button" disabled tabindex="0" title="Undo"><i class="fa-solid fontAwesome"
+            aria-label="Undo">
+            <!-- undo -->
+            &#xf0e2
+          </i></button>
+        <button id="redoButton" type="button" disabled tabindex="0" title="Redo"><i class="fa-solid fontAwesome"
+            aria-label="Redo">
+            <!-- redo -->
+            &#xf01e
+          </i></button>
 
         <button id="resetButton" type="button" aria-label="Reset" disabled tabindex="0"
           title="Reset choices to defaults"><i class="fa-solid fontAwesome">

@@ -11,7 +11,7 @@ const cacheId = `SW Cache - v${cacheVersion}`;
 
 /** @type {Files} */
 const files = {
-  "./": "1",
+  "./": "2",
   "./manifest.json": "1",
   "./img/pp%20icon%20-%2016x16.png": "1",
   "./img/pp%20icon%20-%2032x32.png": "1",
