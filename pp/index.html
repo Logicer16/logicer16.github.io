@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta content="width=360, initial-scale=1.0" name="viewport">
+    <meta content="width=360, initial-scale=1.0, viewport-fit=cover" name="viewport">
 
     <!-- Metadata -->
     <title>Logicer's PP</title>
@@ -83,6 +83,8 @@
       body {
         width: auto;
         background-color: var(--background-color);
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+          env(safe-area-inset-bottom) env(safe-area-inset-left);
       }
 
       * {
