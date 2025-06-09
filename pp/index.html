@@ -83,8 +83,9 @@
       body {
         width: auto;
         background-color: var(--background-color);
-        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+        padding: 0 env(safe-area-inset-right)
           env(safe-area-inset-bottom) env(safe-area-inset-left);
+        touch-action: manipulation;
       }
 
       * {
@@ -213,6 +214,10 @@
         font-size: min(6vw, 4rem);
         min-height: 1.35em;
         margin-bottom: 0;
+
+        position: relative;
+        top: env(safe-area-inset-top);
+        z-index: 9001;
       }
 
       .revealer {
@@ -256,7 +261,7 @@
         gap: var(--gap);
         flex-wrap: wrap;
 
-        padding-top: 2rem;
+        padding-top: calc(2rem + env(safe-area-inset-top));
         padding-bottom: 0.75rem;
         position: sticky;
         top: -0.5rem;
