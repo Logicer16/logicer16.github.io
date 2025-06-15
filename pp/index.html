@@ -45,7 +45,7 @@
     <link rel="manifest" href="./manifest.json">
     <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="canvas" media="(prefers-color-scheme: dark)">
-    
+
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -71,10 +71,10 @@
       :root {
         color-scheme: dark light;
 
-        --background-color: canvas;
+        --background-colour: canvas;
 
         @media (prefers-color-scheme: light) {
-          --background-color: #f0f0f0;
+          --background-colour: #f0f0f0;
         }
 
         scrollbar-gutter: stable both-edges;
@@ -82,9 +82,8 @@
 
       body {
         width: auto;
-        background-color: var(--background-color);
-        padding: 0 env(safe-area-inset-right)
-          env(safe-area-inset-bottom) env(safe-area-inset-left);
+        background-color: var(--background-colour);
+        padding: 0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
         touch-action: manipulation;
       }
 
@@ -173,7 +172,7 @@
         color: transparent;
         transition: color 0.1s linear;
 
-        &:before,
+        &::before,
         * {
           opacity: 0;
           transition: opacity 0.1s linear;
@@ -183,7 +182,7 @@
           color: revert;
 
           *,
-          &:before {
+          &::before {
             opacity: 1;
           }
         }
@@ -209,9 +208,13 @@
     <!-- MARK: Title Styles
     -->
     <style>
+      :root {
+        --heading-font: min(6vw, 4rem);
+      }
+
       h1 {
         text-align: center;
-        font-size: min(6vw, 4rem);
+        font-size: var(--heading-font);
         min-height: 1.35em;
         margin-bottom: 0;
 
@@ -253,7 +256,7 @@
 
       #controls {
         --gap: 1rem;
-        --height: min(2rem, 8vw);
+        --height: 2rem;
         --buttonCount: 5;
 
         display: flex;
@@ -263,9 +266,11 @@
 
         padding-top: calc(2rem + env(safe-area-inset-top));
         padding-bottom: 0.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
         position: sticky;
         top: -0.5rem;
-        background-color: var(--background-color);
+        background-color: var(--background-colour);
 
         &:after {
           content: "";
@@ -275,7 +280,7 @@
           left: 0;
           pointer-events: none;
           background-image: linear-gradient(to bottom,
-              var(--background-color) 20%,
+              var(--background-colour) 20%,
               transparent);
           width: 100%;
           height: 1.25rem;
@@ -287,7 +292,7 @@
           gap: var(--gap);
 
           #showHide {
-            &+label:before {
+            &+label::before {
               /* Set the font and weight for this icon style */
               font: var(--fa-font-solid);
               /* Make sure icons render pixel-perfect */
@@ -296,7 +301,7 @@
               content: "\f070";
             }
 
-            &:checked+label:before {
+            &:checked+label::before {
               /* eye */
               content: "\f06e";
             }
@@ -310,7 +315,7 @@
             border-radius: calc(var(--buttonBorderRadius) * 1.5);
 
             &>*,
-            &:before {
+            &::before {
               line-height: var(--height) !important;
             }
           }
@@ -366,7 +371,7 @@
         }
 
         &>*,
-        &:before {
+        &::before {
           vertical-align: bottom;
         }
 
@@ -462,7 +467,7 @@
           border-style: solid;
 
           input[type="checkbox"] {
-            &+label:before {
+            &+label::before {
               /* Set the font and weight for this icon style */
               font: var(--fa-font-solid);
               /* Make sure icons render pixel-perfect */
@@ -471,7 +476,7 @@
               color: lime;
             }
 
-            &:checked+label:before {
+            &:checked+label::before {
               /* cross */
               content: "\f00d";
               color: red;
@@ -521,7 +526,7 @@
             p {
               cursor: help;
 
-              &:before {
+              &::before {
                 content: "#";
               }
             }
@@ -532,7 +537,7 @@
               width: var(--height);
 
               &>*,
-              &:before {
+              &::before {
                 line-height: var(--height);
               }
             }
