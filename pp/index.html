@@ -225,6 +225,36 @@
       }
     </style>
 
+    <!-- MARK: Noscript Styles
+    -->
+    <noscript>
+      <style>
+        h1,
+        h2,
+        p,
+        .fa-solid {
+          opacity: 1;
+
+          .revealer:not(.resizing)>.revealing {
+            transition: width 0.5s ease;
+          }
+        }
+
+        .hideFontInChildren {
+          color: revert;
+
+          *,
+          &::before {
+            opacity: 1;
+          }
+        }
+
+        .scripted {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+
     <!-- MARK: Title Styles
     -->
     <style>
@@ -417,11 +447,12 @@
         opacity: 0;
       }
 
-      #emptyInfo {
+      .largeNotice {
         display: flex;
         flex-direction: column;
         margin-top: 12vh;
         align-items: center;
+        text-align: center;
 
         :has(#showHide:checked, #iconGrid input[type="checkbox"]:checked) & {
           display: none;
@@ -437,6 +468,10 @@
 
         i {
           font-size: 8rem;
+        }
+
+        p {
+          margin: 0;
         }
 
         label {
@@ -804,7 +839,7 @@
           id="revealingPicker" class="revealing">Picker</span></span>
     </h1>
 
-    <form method="dialog" id="controls">
+    <form method="dialog" id="controls" class="scripted">
       <!-- eslint-disable @html-eslint/use-baseline -->
       <input id="shareCode" type="text" class="fontSono hideFontInChildren" aria-label="Share Code" autocapitalize="off"
         autocomplete="off" placeholder="Share Code" size="20" spellcheck="false" tabindex="0"
@@ -837,15 +872,29 @@
           </i></button>
       </div>
     </form>
-    <div id="emptyInfo">
+    <div id="emptyInfo" class="largeNotice scripted">
       <i class="fa-solid fontAwesome">
-        <!--file-question-->
+        <!-- file-question -->
         &#xe4ef
       </i>
       <h2 class="fontSono">No colours selected</h2>
       <label class="button fontSono hideFontInChildren" for="showHide" role="button"><span>Show Hidden
           Colours</span></label>
     </div>
+    <noscript>
+      <div id="noScript" class="largeNotice">
+        <i class="fa-solid fontAwesome">
+          <!-- file-circle-exclamation -->
+          &#xe4eb
+        </i>
+        <h2 class="fontSono">JavaScript is Disabled</h2>
+        <p class="fontSono">This site requires JavaScript to function.
+          <a href="https://www.google.com/httpservice/retry/enablejs" target="_blank" rel="noopener noreferrer">
+            Learn more
+          </a>
+        </p>
+      </div>
+    </noscript>
 
     <form id="iconGrid" method="dialog">
     </form>
