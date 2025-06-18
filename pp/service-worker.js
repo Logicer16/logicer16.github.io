@@ -4,7 +4,7 @@
 /// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-const cacheVersion = "7";
+const cacheVersion = "8";
 const cacheId = `SW Cache - v${cacheVersion}`;
 
 /** @type {string[]} */
