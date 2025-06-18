@@ -168,7 +168,7 @@ function registerServiceWorker() {
       .register("./service-worker.js")
       .then((registration) => {
         console.log("Service worker registered");
-        return registration.update();
+        if (registration.active) return registration.update();
       })
       .catch((/** @type {unknown} */ error) => {
         console.warn("Service worker registration failed", error);
