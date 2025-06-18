@@ -5,6 +5,18 @@
     <meta charset="UTF-8">
     <meta content="width=360, initial-scale=1.0, viewport-fit=cover" name="viewport">
 
+    <!-- Fonts -->
+    <!-- Sono -->
+    <!-- Used under OFT licence (https://github.com/sursly/Sono/blob/7dc859025b464e8530d90116782b5407b7b6376d/OFL.txt)  -->
+    <!-- Licence also available at http://logicer.cc/pp/fonts/Sono/OFT.txt -->
+    <!-- Originally downloaded from https://fonts.googleapis.com/css2?family=Sono:wght,MONO@200,1;400,0&display=block&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%60%7A%7B%7C%7D" -->
+    <link as="font" href="./fonts/Sono/sono-200.woff2" rel="preload" type="font/woff2" crossorigin="anonymous">
+    <link as="font" href="./fonts/Sono/sono-400.woff2" rel="preload" type="font/woff2" crossorigin="anonymous">
+
+    <!-- Font Awesome 6.7.2 -->
+    <!-- Used under licence: http://logicer.cc/pp/fonts/Font%20Awesome/LICENSE.txt -->
+    <link as="font" href="./fonts/Font%20Awesome/fa-solid-900.woff2" rel="preload" type="font/woff2" crossorigin="anonymous">
+
     <!-- Metadata -->
     <title>Logicer's PP</title>
     <meta name="description" content="Choose the nicest shade of pink for the new icon design">
@@ -50,18 +62,6 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <script src="./service-worker.js" defer fetchpriority="low"></script>
-
-    <!-- Fonts -->
-    <!-- Sono -->
-    <!-- Used under OFT licence (https://github.com/sursly/Sono/blob/7dc859025b464e8530d90116782b5407b7b6376d/OFL.txt)  -->
-    <!-- Licence also available at http://logicer.cc/pp/fonts/Sono/OFT.txt -->
-    <!-- Originally downloaded from https://fonts.googleapis.com/css2?family=Sono:wght,MONO@200,1;400,0&display=block&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%60%7A%7B%7C%7D" -->
-    <link as="font" href="./fonts/Sono/sono-200.woff2" rel="preload">
-    <link as="font" href="./fonts/Sono/sono-400.woff2" rel="preload">
-
-    <!-- Font Awesome 6.7.2 -->
-    <!-- Used under licence: http://logicer.cc/pp/fonts/Font%20Awesome/LICENSE.txt -->
-    <link as="font" href="./fonts/Font%20Awesome/fa-solid-900.woff2" rel="preload">
 
     <!-- MARK: Main Styles
     -->
@@ -1344,7 +1344,10 @@
       /* eslint-disable unicorn/prefer-top-level-await */
       promises.push(
         document.fonts.load("200 1rem Sono").then(() => {
-          fontsHaveLoaded(".fontSono, .fontSonoMono");
+          fontsHaveLoaded(".fontSonoMono");
+        }),
+        document.fonts.load("400 1rem Sono").then(() => {
+          fontsHaveLoaded(".fontSono");
         }),
         document.fonts
           .load(
