@@ -52,18 +52,16 @@
     <script src="./service-worker.js" defer fetchpriority="low"></script>
 
     <!-- Fonts -->
-    <!-- Used under OFT licence (https://github.com/sursly/sono/blob/7dc859025b464e8530d90116782b5407b7b6376d/OFL.txt)  -->
+    <!-- Sono -->
+    <!-- Used under OFT licence (https://github.com/sursly/Sono/blob/7dc859025b464e8530d90116782b5407b7b6376d/OFL.txt)  -->
+    <!-- Licence also available at http://logicer.cc/pp/fonts/Sono/OFT.txt -->
     <!-- Originally downloaded from https://fonts.googleapis.com/css2?family=Sono:wght,MONO@200,1;400,0&display=block&text=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~%20%21%22%23%24%25%26%27%28%29%2A%2B%2C%3A%3B%3C%3D%3E%3F%40%5B%5C%5D%5E%60%7A%7B%7C%7D" -->
-    <link as="font" href="./fonts/sono/sono-200.ttf" rel="preload" crossorigin="anonymous">
-    <link as="font" href="./fonts/sono/sono-400.ttf" rel="preload" crossorigin="anonymous">
+    <link as="font" href="./fonts/Sono/sono-200.woff2" rel="preload">
+    <link as="font" href="./fonts/Sono/sono-400.woff2" rel="preload">
 
-    <!-- eslint-disable @html-eslint/use-baseline -->
-    <link href="https://cdnjs.cloudflare.com" rel="preconnect">
-    <link as="font" crossorigin="anonymous"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2" rel="preload">
-    <link blocking="render" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css"
-      rel="stylesheet">
-    <!-- eslint-enable @html-eslint/use-baseline -->
+    <!-- Font Awesome 6.7.2 -->
+    <!-- Used under licence: http://logicer.cc/pp/fonts/Font%20Awesome/LICENSE.txt -->
+    <link as="font" href="./fonts/Font%20Awesome/fa-solid-900.woff2" rel="preload">
 
     <!-- MARK: Main Styles
     -->
@@ -78,6 +76,8 @@
         }
 
         scrollbar-gutter: stable both-edges;
+
+        --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free"
       }
 
       body {
@@ -101,7 +101,7 @@
         font-display: block;
         src:
           local("Sono"),
-          url(./fonts/sono/sono-400.ttf) format('truetype');
+          url("./fonts/Sono/sono-400.woff2") format('woff2');
       }
 
       @font-face {
@@ -111,7 +111,7 @@
         font-display: block;
         src:
           local("Sono"),
-          url(./fonts/sono/sono-200.ttf) format('truetype');
+          url("./fonts/Sono/sono-200.woff2") format('woff2');
       }
 
       .fontSono {
@@ -142,6 +142,18 @@
 
       .fontExtraLight {
         font-weight: 200;
+      }
+
+      @font-face {
+        font-family: "Font Awesome 6 Free";
+        font-style: normal;
+        font-weight: 900;
+        font-display: block;
+        src: url("./fonts/Font%20Awesome/fa-solid-900.woff2") format("woff2")
+      }
+
+      .fa-solid {
+        font-weight: 900
       }
 
       .fontAwesome {

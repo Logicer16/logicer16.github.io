@@ -30,10 +30,9 @@ const files = [
   "./img/pp%20icon%20masked%20-%20256x256.png",
   "./img/pp%20icon%20masked%20-%20512x512.png",
   "./img/pp%20icon%20masked%20-%201024x1024.png",
-  "./fonts/sono/sono-200.ttf",
-  "./fonts/sono/sono-400.ttf",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/solid.min.css",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/webfonts/fa-solid-900.woff2",
+  "./fonts/Font%20Awesome/fa-solid-900.woff2",
+  "./fonts/Sono/sono-200.woff2",
+  "./fonts/Sono/sono-400.woff2",
 ];
 
 const fileURLs = new Set(
