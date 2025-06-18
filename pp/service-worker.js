@@ -10,7 +10,7 @@ const cacheId = `SW Cache - v${cacheVersion}`;
 /** @type {string[]} */
 const files = [
   "./",
-  "./manifest.json",
+  "./manifest.webmanifest",
   "./img/pp%20icon%20-%2016x16.png",
   "./img/pp%20icon%20-%2032x32.png",
   "./img/pp%20icon%20-%2048x48.png",
